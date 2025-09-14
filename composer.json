@@ -1,6 +1,17 @@
 {
     "name": "zapwize/laravel",
     "description": "Laravel package for Zapwize WhatsApp Web API integration",
+    "homepage": "https://github.com/Will-create/laravel-zapwize",
+    "support": {
+        "issues": "https://github.com/Will-create/laravel-zapwize/issues",
+        "source": "https://github.com/Will-create/laravel-zapwize"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/Will-create"
+        }
+    ],
     "keywords": [
         "laravel",
         "whatsapp",
