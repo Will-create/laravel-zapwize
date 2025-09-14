@@ -9,10 +9,15 @@ class ZapwizeServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
+        if ($this->app->runningInConsole() && !$this->app->environment('testing')) {
             $this->publishes([
                 __DIR__.'/../config/zapwize.php' => config_path('zapwize.php'),
             ], 'config');
+
+            $this->app->booted(function () {
+                $zapwize = $this->app->make(ZapwizeClient::class);
+                $zapwize->getLoop()->run();
+            });
         }
     }
 

@@ -58,18 +58,5 @@ return [
         'queue' => env('ZAPWIZE_QUEUE', 'zapwize'),
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Webhook Settings
-    |--------------------------------------------------------------------------
-    |
-    | Configure webhook settings for incoming message handling.
-    |
-    */
-
-    'webhook' => [
-        'enabled' => env('ZAPWIZE_WEBHOOK_ENABLED', false),
-        'url' => env('ZAPWIZE_WEBHOOK_URL'),
-        'secret' => env('ZAPWIZE_WEBHOOK_SECRET'),
-    ],
+    
 ];
