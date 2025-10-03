@@ -334,6 +334,11 @@ class ZapwizeClient
         return $this->serverInfo;
     }
 
+    public function clearCache(): void
+    {
+        $this->serverInfo = null;
+    }
+
     protected function makeRequest(string $url, array $payload): array
     {
         try {
