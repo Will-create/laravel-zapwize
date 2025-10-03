@@ -12,7 +12,7 @@ class ZapwizeServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole() && !$this->app->environment('testing')) {
             $this->publishes([
                 __DIR__.'/../config/zapwize.php' => config_path('zapwize.php'),
-            ], 'config');
+            ], 'zapwize-config');
 
             $this->app->booted(function () {
                 if (config('zapwize.api_key')) {
