@@ -15,8 +15,10 @@ class ZapwizeServiceProvider extends ServiceProvider
             ], 'config');
 
             $this->app->booted(function () {
-                $zapwize = $this->app->make(ZapwizeClient::class);
-                $zapwize->getLoop()->run();
+                if (config('zapwize.api_key')) {
+                    $zapwize = $this->app->make(ZapwizeClient::class);
+                    $zapwize->getLoop()->run();
+                }
             });
         }
     }

@@ -36,13 +36,8 @@ class ZapwizeClient
             'log_level' => 'info',
         ], $config);
 
-        if (empty($this->config['api_key'])) {
-            throw new ZapwizeException('API key is required');
-        }
-
         $this->http = app(HttpClient::class);
         $this->loop = LoopFactory::create();
-        $this->initialize();
     }
 
     protected function initialize(): void
@@ -374,7 +369,7 @@ class ZapwizeClient
     protected function ensureConnection(): void
     {
         if (!$this->serverInfo || !$this->connected) {
-            throw new ZapwizeException('Client not initialized or disconnected');
+            $this->initialize();
         }
     }
 
