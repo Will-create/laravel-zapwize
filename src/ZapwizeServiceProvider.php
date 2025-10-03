@@ -34,5 +34,13 @@ class ZapwizeServiceProvider extends ServiceProvider
         });
 
         $this->app->alias(ZapwizeClient::class, 'zapwize');
+
+        $this->commands([
+            \Zapwize\Laravel\Console\Commands\TestConnection::class,
+            \Zapwize\Laravel\Console\Commands\SendTestMessage::class,
+            \Zapwize\Laravel\Console\Commands\ClearCache::class,
+            \Zapwize\Laravel\Console\Commands\MessageStatus::class,
+            \Zapwize\Laravel\Console\Commands\RetryFailedMessages::class,
+        ]);
     }
 }
