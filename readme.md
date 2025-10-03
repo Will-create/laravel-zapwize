@@ -37,16 +37,10 @@ composer require zapwize/laravel
 
     ```env
     ZAPWIZE_API_KEY=your_zapwize_api_key
-    ZAPWIZE_BASE_URL=https://api.zapwize.com/v1
 
     # Optional queue settings
     ZAPWIZE_QUEUE_CONNECTION=database
     ZAPWIZE_QUEUE=zapwize
-
-    # Optional webhook settings
-    ZAPWIZE_WEBHOOK_ENABLED=true
-    ZAPWIZE_WEBHOOK_URL=https://your-app.com/zapwize/webhook
-    ZAPWIZE_WEBHOOK_SECRET=your_webhook_secret
     ```
 
 ## Requirements

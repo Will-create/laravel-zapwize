@@ -12,6 +12,7 @@ use Zapwize\Laravel\Events\ConnectionLost;
 use Ratchet\Client\connect;
 use Ratchet\Client\WebSocket;
 use React\EventLoop\Factory as LoopFactory;
+use function Ratchet\Client\connect;
 
 class ZapwizeClient
 {
@@ -90,7 +91,7 @@ class ZapwizeClient
             $this->serverInfo['phone']
         );
 
-        ($this->loop)(function () use ($wsUrl) {
+        $this->loop->futureTick(function () use ($wsUrl) {
             connect($wsUrl)->then(function (WebSocket $conn) {
                 $this->connected = true;
                 $this->reconnectAttempts = 0;
