@@ -77,3 +77,6 @@ class ZapwizeMessage extends Model
      * Scope for messages by phone
      */
     public function scopeByPhone($query, string $phone)
+    {
+        return $query->where('phone', $phone);
+    }
